@@ -39,3 +39,4 @@ metadata:
     release.openshift.io/verification-config-map: ""
   creationTimestamp: null
   name: release-verification
+  namespace: openshift-config-managed
