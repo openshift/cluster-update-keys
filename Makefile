@@ -25,7 +25,7 @@ rhel:
 	cat keys/verifier-public-key-redhat-release > "$$keydir/verifier-public-key-redhat"; \
 	cat keys/verifier-public-key-redhat-beta-2 >> "$$keydir/verifier-public-key-redhat"; \
 	echo "# Release verification against Official Red Hat keys" > \
-		manifests.rhel/0000_00_cluster-update-keys_configmap.yaml; \
+		manifests.rhel/0000_90_cluster-update-keys_configmap.yaml; \
 	oc create configmap release-verification -n openshift-config-managed \
 			--from-file=$$keydir/verifier-public-key-redhat \
 			--from-file=stores/store-openshift-official-release \

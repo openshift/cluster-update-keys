@@ -1,3 +1,4 @@
+# Release verification against Official Red Hat keys
 apiVersion: v1
 data:
   store-openshift-official-release: https://storage.googleapis.com/openshift-release/official/signatures/openshift/release
