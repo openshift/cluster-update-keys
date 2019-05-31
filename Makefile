@@ -21,7 +21,7 @@ ci:
 # will remove the beta 2 key from the trust relationship. The signature storage is a bucket
 # on GCS and on mirror.openshift.com.
 rhel:
-	keydir=$(shell mktemp -d -t keys); \
+	keydir=$(shell mktemp -d -t keys-XXXXXXXX); \
 	gpg --dearmor < keys/verifier-public-key-redhat-release > "$$keydir/verifier-public-key-redhat.gpg"; \
 	gpg --dearmor < keys/verifier-public-key-redhat-beta-2 >> "$$keydir/verifier-public-key-redhat.gpg"; \
 	gpg --enarmor < "$$keydir/verifier-public-key-redhat.gpg" > "$$keydir/verifier-public-key-redhat"; \
