@@ -22,7 +22,7 @@ ci:
 # on GCS and on mirror.openshift.com.
 rhel:
 	keydir=$(shell mktemp -d -t keys); \
-	cat keys/verifier-public-key-redhat-release > "$$keydir/verifier-public-key-redhat"; \
+	#cat keys/verifier-public-key-redhat-release > "$$keydir/verifier-public-key-redhat"; \
 	cat keys/verifier-public-key-redhat-beta-2 >> "$$keydir/verifier-public-key-redhat"; \
 	echo "# Release verification against Official Red Hat keys" > \
 		manifests.rhel/0000_90_cluster-update-keys_configmap.yaml; \
