@@ -4,7 +4,7 @@ data:
   store-openshift-official-release: https://storage.googleapis.com/openshift-release/official/signatures/openshift/release
   store-openshift-official-release-mirror: https://mirror.openshift.com/pub/openshift-v4/signatures/openshift/release
   verifier-public-key-redhat: |
-    -----BEGIN PGP ARMORED FILE-----
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
     Comment: Use "gpg --dearmor" for unpacking
 
     mQINBErgSTsBEACh2A4b0O9t+vzC9VrVtL1AKvUWi9OPCjkvR7Xd8DtJxeeMZ5eF
@@ -56,7 +56,7 @@ data:
     IUgShFU/65aLjh7sX3Zmb2tQ4Vb1Aul4+/okzE1SVAKv+FMp99T9TiZgNmtD0wgK
     lpGyUoChXHLIz6E2y8sYbjEjZBGRR75Wa0ivb5z85n4kR9Dq8d8GKTE=
     =syRO
-    -----END PGP ARMORED FILE-----
+    -----END PGP PUBLIC KEY BLOCK-----
 kind: ConfigMap
 metadata:
   annotations:
