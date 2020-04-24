@@ -5,6 +5,7 @@ data:
   store-openshift-official-release-mirror: https://mirror.openshift.com/pub/openshift-v4/signatures/openshift/release
   verifier-public-key-redhat: |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
+    Version: GnuPG v2.0.22 (GNU/Linux)
     Comment: Use "gpg --dearmor" for unpacking
 
     mQINBErgSTsBEACh2A4b0O9t+vzC9VrVtL1AKvUWi9OPCjkvR7Xd8DtJxeeMZ5eF

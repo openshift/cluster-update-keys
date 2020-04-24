@@ -1,9 +1,13 @@
-# Release verification against OpenShift CI keys signed by the CI infrastructure
+# Release verification against OpenShift CI keys signed by the CI infrastructure and official Red Hat keys
 apiVersion: v1
 data:
   store-openshift-ci-release: https://storage.googleapis.com/openshift-ci-release/releases/signatures/openshift/release
-  verifier-public-key-openshift-ci: |-
+  store-openshift-official-release: https://storage.googleapis.com/openshift-release/official/signatures/openshift/release
+  store-openshift-official-release-mirror: https://mirror.openshift.com/pub/openshift-v4/signatures/openshift/release
+  verifier-public-key-redhat: |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
+    Version: GnuPG v2.0.22 (GNU/Linux)
+    Comment: Use "gpg --dearmor" for unpacking
 
     mQENBFy9Q6sBCAD1MvcwX9f1Vu/M/dh+SJYbuAP4urtZZ7YoZOlzo6lw/xDF9z0E
     ef8BXAtO7YMStfbxn5Rqb3kPnA20CRXraW4PqA5mB37ubDGThxb8catCTeWpd/5o
@@ -30,8 +34,56 @@ data:
     gm61vHfbviKSyQg3hpKG8/g2sFgQ9CNi5DFghIYesp+7NwCC+UOVGBu90O4SIq+I
     Ms2n3OTR2GIEz0LgEvC/3R7pkBNjLNTccExBNqOShJy3XnwntvYflxVwEBVsyEbK
     LvLU2xtlIE/IdGssKQR8UFFsgFmGiX3t1TcahFnLlr6Et+vB4J02Xr+uvZ81v/Zq
-    1OHz7iIjrd28MslYu24=
-    =xMCa
+    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
+    0Orx3wYpMQ==
+    =eYH0
     -----END PGP PUBLIC KEY BLOCK-----
 kind: ConfigMap
 metadata:
