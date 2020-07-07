@@ -3,7 +3,7 @@ all: ci rhel
 
 # The CI system uses the OpenShift CI public key and verifies it against a bucket on GCS.
 ci:
-	echo "# Release verification against OpenShift CI keys" > \
+	echo "# Release verification against OpenShift CI keys signed by the CI infrastructure" > \
 		manifests/0000_90_cluster-update-keys_configmap.yaml
 	oc create configmap release-verification \
 			--from-file=keys/verifier-public-key-openshift-ci \
