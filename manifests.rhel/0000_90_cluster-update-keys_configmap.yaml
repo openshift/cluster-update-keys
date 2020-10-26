@@ -60,6 +60,7 @@ data:
 kind: ConfigMap
 metadata:
   annotations:
+    include.release.openshift.io/self-managed-high-availability: "true"
     release.openshift.io/verification-config-map: ""
   creationTimestamp: null
   name: release-verification
