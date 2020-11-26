@@ -11,6 +11,7 @@ ci:
 			--dry-run -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
 			include.release.openshift.io/self-managed-high-availability="true" \
+			include.release.openshift.io/single-node-developer="true" \
 			-n openshift-config-managed --local --dry-run -o yaml	>> \
 		manifests/0000_90_cluster-update-keys_configmap.yaml; \
 	echo "  namespace: openshift-config-managed" >> \
@@ -36,6 +37,7 @@ rhel:
 			--dry-run -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
 			include.release.openshift.io/self-managed-high-availability="true" \
+			include.release.openshift.io/single-node-developer="true" \
 			-n openshift-config-managed --local --dry-run -o yaml	>> \
 		manifests.rhel/0000_90_cluster-update-keys_configmap.yaml; \
 	echo "  namespace: openshift-config-managed" >> \
