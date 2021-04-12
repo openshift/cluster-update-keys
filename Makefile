@@ -10,6 +10,7 @@ ci:
 			--from-file=stores/store-openshift-ci-release \
 			--dry-run -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
+			include.release.openshift.io/ibm-cloud-managed="true" \
 			include.release.openshift.io/self-managed-high-availability="true" \
 			include.release.openshift.io/single-node-developer="true" \
 			-n openshift-config-managed --local --dry-run=client -o yaml	>> \
@@ -36,6 +37,7 @@ rhel:
 			--from-file=stores/store-openshift-official-release-mirror \
 			--dry-run=client -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
+			include.release.openshift.io/ibm-cloud-managed="true" \
 			include.release.openshift.io/self-managed-high-availability="true" \
 			include.release.openshift.io/single-node-developer="true" \
 			-n openshift-config-managed --local --dry-run=client -o yaml	>> \
