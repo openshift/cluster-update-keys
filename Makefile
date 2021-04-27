@@ -7,6 +7,7 @@ ci:
 		manifests/0000_90_cluster-update-keys_configmap.yaml
 	oc create configmap release-verification \
 			--from-file=keys/verifier-public-key-openshift-ci \
+			--from-file=keys/verifier-public-key-openshift-ci-2 \
 			--from-file=stores/store-openshift-ci-release \
 			--dry-run -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
