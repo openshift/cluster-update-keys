@@ -23,5 +23,5 @@ store-*: A URL (scheme file://, http://, or https://) location that contains sig
 
 See https://github.com/containers/image/blob/ab49b0a48428c623a8f03b41b9083d48966b34a9/docs/signature-protocols.md for a description of the signature store.
 
-The OpenShift CI system uses the public key described here and signs releases at https://openshift-release.svc.ci.openshift.org once they are created. Nightly and OKD builds are signed with CI release key and signatures updated to openshift-ci-release GCS bucket/.
+The OpenShift CI system uses the public key described here and signs releases at https://amd64.ocp.releases.ci.openshift.org/ once they are created. Nightly and OKD builds are signed with CI release key and signatures updated to openshift-ci-release GCS bucket/.
 Official OCP builds are signed with Red Hat release key, signatures uploaded to openshift-release GCS bucket and mirrored to https://mirror.openshift.com/pub/openshift-v4/signatures/openshift/release
