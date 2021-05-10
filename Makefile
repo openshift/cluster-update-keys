@@ -3,11 +3,15 @@ all: ci rhel
 
 # The CI system uses the OpenShift CI public key and verifies it against a bucket on GCS.
 ci:
+	keydir=$(shell mktemp -d -t keys-XXXXXXXX); \
+	gpg --dearmor < keys/verifier-public-key-openshift-ci > "$$keydir/verifier-public-key-ci.gpg"; \
+	gpg --dearmor < keys/verifier-public-key-openshift-ci-2 >> "$$keydir/verifier-public-key-ci.gpg"; \
+	gpg --enarmor < "$$keydir/verifier-public-key-ci.gpg" > "$$keydir/verifier-public-key-ci"; \
+	sed -i 's/ARMORED FILE/PUBLIC KEY BLOCK/' "$$keydir/verifier-public-key-ci"; \
 	echo "# Release verification against OpenShift CI keys signed by the CI infrastructure" > \
-		manifests/0000_90_cluster-update-keys_configmap.yaml
+		manifests/0000_90_cluster-update-keys_configmap.yaml; \
 	oc create configmap release-verification \
-			--from-file=keys/verifier-public-key-openshift-ci \
-			--from-file=keys/verifier-public-key-openshift-ci-2 \
+			--from-file=$$keydir/verifier-public-key-ci \
 			--from-file=stores/store-openshift-ci-release \
 			--dry-run -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
