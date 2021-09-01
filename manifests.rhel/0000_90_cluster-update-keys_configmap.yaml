@@ -1,8 +1,7 @@
 # Release verification against Official Red Hat keys
 apiVersion: v1
 data:
-  store-openshift-official-release: https://storage.googleapis.com/openshift-release/official/signatures/openshift/release
-  store-openshift-official-release-mirror: https://mirror.openshift.com/pub/openshift-v4/signatures/openshift/release
+  store-openshift-official-release-mirror: https://mirror2.openshift.com/pub/openshift-v4/signatures/openshift/release
   verifier-public-key-redhat: |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
     Comment: Use "gpg --dearmor" for unpacking

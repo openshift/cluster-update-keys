@@ -38,7 +38,6 @@ rhel:
 		manifests.rhel/0000_90_cluster-update-keys_configmap.yaml; \
 	oc create configmap release-verification -n openshift-config-managed \
 			--from-file=$$keydir/verifier-public-key-redhat \
-			--from-file=stores/store-openshift-official-release \
 			--from-file=stores/store-openshift-official-release-mirror \
 			--dry-run=client -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \

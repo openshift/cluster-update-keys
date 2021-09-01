@@ -1,7 +1,7 @@
 # Release verification against OpenShift CI keys signed by the CI infrastructure
 apiVersion: v1
 data:
-  store-openshift-ci-release: https://storage.googleapis.com/openshift-ci-release/releases/signatures/openshift/release
+  store-openshift-ci-release: https://mirror2.openshift.com/pub/openshift-v4/signatures/openshift/release
   verifier-public-key-ci: |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
     Comment: Use "gpg --dearmor" for unpacking
