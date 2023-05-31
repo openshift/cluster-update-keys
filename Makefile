@@ -6,6 +6,7 @@ ci:
 	keydir=$(shell mktemp -d -t keys-XXXXXXXX); \
 	gpg --dearmor < keys/verifier-public-key-openshift-ci > "$$keydir/verifier-public-key-ci.gpg"; \
 	gpg --dearmor < keys/verifier-public-key-openshift-ci-2 >> "$$keydir/verifier-public-key-ci.gpg"; \
+	gpg --dearmor < keys/verifier-public-key-openshift-ci-3 >> "$$keydir/verifier-public-key-ci.gpg"; \
 	gpg --enarmor < "$$keydir/verifier-public-key-ci.gpg" > "$$keydir/verifier-public-key-ci"; \
 	sed -i 's/ARMORED FILE/PUBLIC KEY BLOCK/' "$$keydir/verifier-public-key-ci"; \
 	echo "# Release verification against OpenShift CI keys signed by the CI infrastructure" > \
@@ -13,7 +14,7 @@ ci:
 	oc create configmap release-verification \
 			--from-file=$$keydir/verifier-public-key-ci \
 			--from-file=stores/store-openshift-ci-release \
-			--dry-run -o yaml | \
+			--dry-run=client -o yaml | \
 		oc annotate -f - release.openshift.io/verification-config-map= \
 			include.release.openshift.io/ibm-cloud-managed="true" \
 			include.release.openshift.io/self-managed-high-availability="true" \
