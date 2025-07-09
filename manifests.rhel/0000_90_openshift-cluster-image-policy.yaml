@@ -10,6 +10,7 @@ metadata:
 spec:
   scopes:
   - quay.io/openshift-release-dev/ocp-release
+  - quay.io/openshift-release-dev/ocp-v4.0-art-dev
   policy:
     rootOfTrust:
       policyType: PublicKey
