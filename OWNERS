@@ -1,12 +1,7 @@
 approvers:
-- deads2k
-- sdodson
-- bparees
-- dhellmann
 - jupierce
-reviewers:
-- deads2k
+- mrunalp
 - sdodson
-- dhellmann
-- bparees
+reviewers:
+- sdodson
 - wking
