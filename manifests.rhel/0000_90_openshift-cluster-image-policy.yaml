@@ -6,7 +6,6 @@ metadata:
     kubernetes.io/description: Require Red Hat signatures for quay.io/openshift-release-dev/ocp-release container images.
     exclude.release.openshift.io/internal-openshift-hosted: "true"
     include.release.openshift.io/self-managed-high-availability: "true"
-    release.openshift.io/feature-set: TechPreviewNoUpgrade
 spec:
   scopes:
   - quay.io/openshift-release-dev/ocp-release
