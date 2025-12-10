@@ -69,4 +69,3 @@ metadata:
   creationTimestamp: null
   name: release-verification
   namespace: openshift-config-managed
-  namespace: openshift-config-managed
