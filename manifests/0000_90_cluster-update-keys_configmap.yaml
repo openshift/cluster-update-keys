@@ -1,6 +1,7 @@
 # Release verification against OpenShift CI keys signed by the CI infrastructure
 apiVersion: v1
 data:
+  release-repository-default: quay.io/okd/scos-release
   store-openshift-ci-release: https://storage.googleapis.com/openshift-ci-release/releases/signatures/openshift/release
   verifier-public-key-ci: |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
