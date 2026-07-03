@@ -11,6 +11,7 @@ spec:
   - quay.io/openshift-release-dev/ocp-release
   - quay.io/openshift-release-dev/ocp-v4.0-art-dev
   - quay.io/openshift-release-dev/ocp-v5.0-art-dev
+  - registry.redhat.io
   policy:
     rootOfTrust:
       policyType: PublicKey
